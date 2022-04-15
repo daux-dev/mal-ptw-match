@@ -4,6 +4,7 @@
   "description": "Looks for matches in two MyAnimeList users plan-to-watch lists.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "d-per",
