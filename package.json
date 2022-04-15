@@ -1,0 +1,15 @@
+{
+  "name": "mal-ptw-match",
+  "version": "1.0.0",
+  "description": "Looks for matches in two MyAnimeList users plan-to-watch lists.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "d-per",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^16.0.0"
+  }
+}
