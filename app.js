@@ -25,7 +25,6 @@ app.use(express.json());
 app.get("/", async (req, res) => {
     try {
         if (req.query.user1 && req.query.user2) {
-            console.log(req.query);
             const user1 = req.query.user1;
             const user2 = req.query.user2;
             const matches = await compareLists(user1, user2);
@@ -35,7 +34,9 @@ app.get("/", async (req, res) => {
                 list: matches
             });
         } else {
-            res.render("index");
+            res.render("index", {
+                home: true
+            });
         }
     } catch (error) {
         console.log(error);
@@ -51,9 +52,11 @@ async function getPtwList(user) {
                 "X-MAL-CLIENT-ID": process.env.MAL_ID // MAL API KEY
             }
         });
+        console.log(res.data.data);
         return res.data.data.map(el => el.node);
     } catch (error) {
-        console.log(error)
+        console.log(error);
+        return;
     }
 }
 
@@ -62,10 +65,15 @@ async function compareLists(user1, user2) {
     try {
         const list1 = await getPtwList(user1);
         const list2 = await getPtwList(user2);
-        const matches = list1.filter(anime => list2.map(el => el.id).includes(anime.id)); /* 🤕 */
-        console.log(matches.map(el => el.title));
+        if (list1 && list2) {
+            const matches = list1.filter(anime => list2.map(el => el.id).includes(anime.id)); /* 🤕 */
+            console.log(matches.map(el => el.title));
 
-        return matches/* .map(el => el.title) */;
+            return matches;   
+        } else {
+            return;
+        }
+        
     } catch (error) {
         console.log(error);
     }

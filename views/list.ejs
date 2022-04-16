@@ -3,7 +3,7 @@
 <% } %>
      
 <div class="list">
-    <% if (locals.list) { %>
+    <% if (locals.list && locals.list.length > 0) { %>
         
             <% list.forEach(element => { %>
                 <div class="anime" style="background-image: url(<%=element.main_picture.medium%>)">
@@ -11,5 +11,7 @@
                 </div>
             <% }) %>
         
+    <% } else if (!locals.home) { %>
+        <h2>Oops.. nothing is here.</h2>
     <% } %>
 </div>
