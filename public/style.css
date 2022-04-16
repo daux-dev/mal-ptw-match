@@ -1,0 +1,66 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    color: white;
+    background-color: #2e51a2;
+}
+a, a:visited {
+    color: white;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+h1 a:hover {
+    text-decoration: underline;
+}
+
+h1, h2 {
+    padding: 4px;
+}
+h3 {
+    color: white;
+    background-color: #2e51a2;
+    padding: 4px 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.anime {
+    width: 225px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    margin: 4px;
+    background-position: center;
+}
+
+.anime a:visited, .anime a {
+    font-size: larger;
+    font-weight: 900;
+    color: white;
+    background-color: #2e51a2;
+    padding: 2px;
+}
+
+.footer, .footer a, .footer:visited {    
+    color: #2e51a2;
+    text-align: center;
+}
+
+.footer {
+   font-size: smaller; 
+}

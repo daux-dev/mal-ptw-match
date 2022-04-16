@@ -1,0 +1,15 @@
+<% if (locals.user1 && locals.user2) { %>
+    <h3><a href="https://myanimelist.net/profile/<%= user1 %>"><%= user1 %></a> and <a href="https://myanimelist.net/profile/<%= user2 %>"><%= user2 %></a> both plan to watch:</h3>
+<% } %>
+     
+<div class="list">
+    <% if (locals.list) { %>
+        
+            <% list.forEach(element => { %>
+                <div class="anime" style="background-image: url(<%=element.main_picture.medium%>)">
+                    <a href="https://myanimelist.net/anime/<%= element.id %>" ><%= element.title %> </a>
+                </div>
+            <% }) %>
+        
+    <% } %>
+</div>
