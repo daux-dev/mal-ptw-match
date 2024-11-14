@@ -18,7 +18,7 @@
             <!-- <label for="user1">User 1</label> -->
             <input type="text" name="user1" placeholder="user 1" <% if(locals.user1) {%> value="<%= user1 %>" <% } %>>
             
-            <button type="submit">match!</button>
+            <button type="submit" onclick="showWorking()">match!</button>
 
             <input type="text" name="user2" placeholder="user 2" <% if(locals.user2) {%> value="<%= user2 %>" <% } %>>
             <!-- <label for="user2">User 2</label> -->
@@ -29,5 +29,24 @@
     <footer>
         <%- include("footer") -%>
     </footer>
+
+    <script>
+        function showWorking() {
+            const button = document.querySelector("button");
+            const iniText = "Working.";
+            let text = iniText;
+            let count = 0;
+
+            setInterval(() => {
+                button.innerHTML = text;
+                text = text + ".";
+                count++
+                if (count == 3) {
+                    text = iniText;
+                    count = 0;
+                }
+            }, 1000);
+        }
+    </script>
 </body>
 </html>
