@@ -11,6 +11,6 @@ compares two plan to watch lists from MyAnimeList users and shows matching entri
 MAL_ID=your-mal-client-id
 PORT=3000
 ```
-5. run `npm install` in a terminal from the root directory to install dependencies
-6. run `node app.js`, it should confirm that the server started on port 3000
-7. in a webbrowser connect to `http://localhost:3000`
+6. run `npm install` in a terminal from the root directory to install dependencies
+7. run `node app.js`, it should confirm that the server started on port 3000
+8. in a webbrowser connect to `http://localhost:3000`
